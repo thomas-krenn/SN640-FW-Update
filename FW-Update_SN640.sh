@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #NVMe-CLI + unzip wird zum Updaten benötigt
-echo 'Installiere benoetigte Programme (unzip, nvme-cli).'
+echo 'Installiere benoetigte Programme (nvme-cli).'
 apt install -y -qq nvme-cli
 
 
