@@ -7,8 +7,8 @@ apt install -y -qq nvme-cli
 
 #Firmware Dateien herunterladen
 echo "Lade Firmware Dateien herunter"
-wget https://www.thomas-krenn.com/redx/tools/mb_download.php/ct.Yn0ChQ/mid.y46c5839fc8b3fbcb/FW_SN640ISE_R1110021_20220512.vpkg 2>/dev/null
-wget https://www.thomas-krenn.com/redx/tools/mb_download.php/ct.Yn0Eng/mid.y3037ba26ded63fdb/FW_SN640TCG_R1410004_20220512.vpkg 2>/dev/null
+wget https://www.thomas-krenn.com/redx/tools/mb_download.php/ct.YoTN7A/mid.ydc307b2d4ce7e045/aspenplus_GN_R1110021.vpkg 2>/dev/null
+wget https://www.thomas-krenn.com/redx/tools/mb_download.php/ct.YoTOVQ/mid.yf5a352f5f15543fe/DCSN640_GR_R1410004.vpkg 2>/dev/null
 echo "Download abgeschlossen"
 
 
@@ -43,7 +43,7 @@ echo "--------------------------------------------------------------------------
 			then
 				echo "Firmware muss fuer" $devnvme "aktualisiert werden. Installierte FW:" $fwnvme
 				#Update $devnvme
-				nvme fw-download $devnvme --fw=FW_SN640TCG_R1410004_20220512.vpkg >/dev/null 2>&1
+				nvme fw-download $devnvme --fw=DCSN640_GR_R1410004.vpkg >/dev/null 2>&1
 				nvme fw-commit $devnvme -a 1
 				echo "Update auf" $devnvme "abgeschlossen"
 		elif [ $fwnvme = "R1410004" ]
@@ -55,7 +55,7 @@ echo "--------------------------------------------------------------------------
 			then
 				echo "Firmware muss fuer" $devnvme "aktualisiert werden. Installierte FW:" $fwnvme
 				#Update $devnvme
-				nvme fw-download $devnvme --fw=FW_SN640ISE_R1110021_20220512.vpkg >/dev/null 2>&1
+				nvme fw-download $devnvme --fw=aspenplus_GN_R1110021.vpkg >/dev/null 2>&1
 				nvme fw-commit $devnvme -a 1
 				echo "Update auf" $devnvme "abgeschlossen"
 		elif [ $fwnvme = "R1110021" ]
